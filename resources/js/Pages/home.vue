@@ -3,6 +3,15 @@ import { ref } from "vue";
 import { Head, Link } from "@inertiajs/vue3";
 import { Dialog, DialogPanel } from "@headlessui/vue";
 import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
+import {
+    ShieldCheckIcon,
+    SparklesIcon,
+    LightBulbIcon,
+    UserGroupIcon,
+    GlobeAmericasIcon,
+    WrenchScrewdriverIcon,
+} from "@heroicons/vue/24/outline";
+
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 
 // 1. Import Swiper Vue.js components
@@ -73,6 +82,74 @@ const services2 = [
     },
 ];
 
+const coreValues = [
+    {
+        title: "INTEGRITY",
+        description:
+            "We uphold the highest standards of integrity, ensuring transparency and honesty in every project we undertake.",
+        icon: ShieldCheckIcon,
+    },
+    {
+        title: "QUALITY",
+        description:
+            "We are committed to excellence, using only the finest materials and craftsmanship to deliver durable and beautiful properties.",
+        icon: SparklesIcon,
+    },
+    {
+        title: "INNOVATION",
+        description:
+            "We embrace creativity and modern solutions to build villas that are not only aesthetically pleasing but also smart and sustainable.",
+        icon: LightBulbIcon,
+    },
+    {
+        title: "CLIENT COMMITMENT",
+        description:
+            "Our clients are our top priority. We work closely with you to turn your vision into a reality, ensuring satisfaction at every step.",
+        icon: UserGroupIcon,
+    },
+    {
+        title: "SUSTAINABILITY",
+        description:
+            "We build in harmony with Bali's nature, using sustainable materials and practices to create eco-friendly luxury.",
+        icon: GlobeAmericasIcon,
+    },
+    {
+        title: "CRAFTSMANSHIP",
+        description:
+            "Our dedication to fine craftsmanship ensures that every detail is executed with precision, creating timeless and durable structures.",
+        icon: WrenchScrewdriverIcon,
+    },
+];
+
+const marqueeImages = [
+    "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=2574&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=2670&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2670&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=500&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?q=80&w=500&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=500&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=500&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=500&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=2670&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2671&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1598228723793-52759bba239c?q=80&w=500&auto=format&fit=crop",
+];
+
+// Untuk membuat tinggi gambar terlihat acak namun konsisten
+const randomHeights = [
+    "h-56",
+    "h-48",
+    "h-56",
+    "h-48",
+    "h-44",
+    "h-56",
+    "h-56",
+    "h-48",
+    "h-56",
+    "h-56",
+    "h-48",
+];
+
 const getImageUrl = (imagePath) => {
     return imagePath
         ? `/storage/${imagePath}`
@@ -82,7 +159,7 @@ const getImageUrl = (imagePath) => {
 
 <template>
     <Head title="Home" />
-    <div class="bg-brand-dark text-text-light">
+    <div class="bg-button-dark text-text-light">
         <!-- Header: diubah menjadi fixed, dengan background transparan dan efek blur -->
         <header
             class="fixed inset-x-0 top-0 z-50 bg-brand-dark/80 backdrop-blur-sm"
@@ -253,6 +330,13 @@ const getImageUrl = (imagePath) => {
 
         <!-- Our Services Section -->
         <section id="services" class="bg-background-light py-24 sm:py-32">
+            <div class="mx-auto max-w-xl px-6 py-16 lg:px-8 text-center">
+                <h2
+                    class="font-serif text-xl font-bold tracking-tight text-center text-button-dark sm:text-8xl"
+                >
+                    Services
+                </h2>
+            </div>
             <!-- Menggunakan grid untuk layout 2 kolom di layar besar (lg) -->
             <div
                 class="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-16 px-6 lg:grid-cols-3 lg:px-8"
@@ -260,12 +344,12 @@ const getImageUrl = (imagePath) => {
                 <!-- Kolom Kiri: Judul dan Deskripsi -->
                 <div class="lg:col-span-1 mt-20">
                     <h2
-                        class="text-7xl text-center tracking-tight font-thin text-text-dark sm:text-9xl sm:text-start"
+                        class="text-7xl text-center tracking-tight font-thin text-button-dark sm:text-9xl sm:text-start"
                     >
                         OUR
                     </h2>
                     <h2
-                        class="font-sans text-6xl text-center text-button-primary font-extrabold tracking-tight sm:text-7xl sm:mb-16 sm:text-start"
+                        class="font-sans text-6xl text-center font-extrabold text-button-dark tracking-tight sm:text-7xl sm:mb-16 sm:text-start"
                     >
                         SERVICES
                     </h2>
@@ -277,7 +361,7 @@ const getImageUrl = (imagePath) => {
                     <div
                         v-for="service in services"
                         :key="service.title"
-                        class="flex flex-col rounded-lg bg-black p-8 shadow-lg hover:bg-brand-medium transition-shadow duration-300"
+                        class="flex flex-col rounded-lg bg-black p-8 shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-2 hover:border-button-primary hover:border-4 hover:shadow-2xl"
                     >
                         <img
                             :src="serviceImages[services.indexOf(service)]"
@@ -307,7 +391,7 @@ const getImageUrl = (imagePath) => {
                     <div
                         v-for="service in services2"
                         :key="service.title"
-                        class="flex flex-col rounded-lg bg-black p-8 shadow-lg hover:bg-brand-medium transition-shadow duration-300"
+                        class="flex flex-col rounded-lg bg-black p-8 shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-2 hover:border-button-primary hover:border-4 hover:shadow-2xl"
                     >
                         <img
                             :src="serviceImages2[services2.indexOf(service)]"
@@ -345,18 +429,29 @@ const getImageUrl = (imagePath) => {
         </section>
 
         <!-- Vision & Mission Section -->
-        <section id="visionmisson" class="bg-button-dark py-24 sm:py-32">
+        <section id="visionmisson" class="bg-button-dark py-24 mb-12 sm:py-32">
+            <div class="mx-auto max-w-xl px-6 lg:px-8 text-center">
+                <h2
+                    class="font-serif text-xl font-bold tracking-tight text-center text-button-light sm:text-8xl"
+                >
+                    Vision and Mission
+                </h2>
+            </div>
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <!-- Vision -->
                 <div
-                    class="grid grid-cols-1 items-center gap-x-16 gap-y-16 lg:grid-cols-2"
+                    class="grid grid-cols-1 items-center gap-x-16 gap-y-16 lg:grid-cols-2 mt-8"
                 >
-                    <div>
-                        <h2
-                            class="font-serif text-xl font-bold tracking-tight text-button-primary sm:text-9xl"
+                    <div class="text-center md:text-right">
+                        <div
+                            class="inline-block border-b-2 border-button-primary pb-2 mb-4"
                         >
-                            VISION
-                        </h2>
+                            <h2
+                                class="font-serif text-3xl font-bold tracking-tight text-button-primary sm:text-8xl"
+                            >
+                                VISION
+                            </h2>
+                        </div>
                         <p class="mt-6 text-lg leading-8 text-text-subtle">
                             To be a leader in creating construction masterpieces
                             that embody perfection, innovation, and client
@@ -370,16 +465,19 @@ const getImageUrl = (imagePath) => {
                     />
                 </div>
 
-                <!-- Mission -->
                 <div
-                    class="mt-24 grid grid-cols-1 items-center gap-x-16 gap-y-16 lg:mt-32 lg:grid-cols-2"
+                    class="mt-24 grid grid-cols-1 items-center gap-x-16 gap-y-16 lg:mt-2 lg:grid-cols-2"
                 >
                     <div class="lg:order-last">
-                        <h2
-                            class="font-serif text-3xl font-bold tracking-tight text-button-primary sm:text-9xl"
+                        <div
+                            class="inline-block border-b-2 border-button-primary pb-2 mb-4"
                         >
-                            MISSION
-                        </h2>
+                            <h2
+                                class="font-serif text-3xl font-bold tracking-tight text-button-primary sm:text-8xl"
+                            >
+                                MISSION
+                            </h2>
+                        </div>
                         <p class="mt-6 text-lg leading-8 text-text-subtle">
                             Delivering the Highest Quality Prioritizing Client
                             Satisfaction Building with Integrity Inspiring
@@ -391,6 +489,81 @@ const getImageUrl = (imagePath) => {
                         alt="Luxurious villa interior"
                         class="w-full rounded-xl object-cover shadow-xl"
                     />
+                </div>
+            </div>
+        </section>
+
+        <!-- Scrolling Gallery Section -->
+        <div class="py-4 sm:py-4 bg-background-light">
+            <div class="relative flex overflow-x-hidden group">
+                <div
+                    class="flex min-w-full flex-shrink-0 animate-marquee items-center justify-around whitespace-nowrap group-hover:[animation-play-state:paused]"
+                >
+                    <div
+                        v-for="(image, index) in marqueeImages"
+                        :key="`a-${index}`"
+                        class="mx-2"
+                    >
+                        <img
+                            :src="image"
+                            :class="randomHeights[index]"
+                            class="max-w-none rounded-xl object-cover"
+                            alt="Villa Gallery Image"
+                        />
+                    </div>
+                    <div
+                        v-for="(image, index) in marqueeImages"
+                        :key="`b-${index}`"
+                        class="mx-2"
+                    >
+                        <img
+                            :src="image"
+                            :class="randomHeights[index]"
+                            class="max-w-none rounded-xl object-cover"
+                            alt="Villa Gallery Image"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Core Values Section -->
+        <section id="core-values" class="bg-background-light py-24 sm:py-32">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                <div class="mx-auto max-w-4xl text-center">
+                    <h2
+                        class="font-serif text-3xl font-bold tracking-tight text-button-primary sm:text-8xl"
+                    >
+                        Our Core Values
+                    </h2>
+                    <p class="mt-6 text-2xl leading-8 text-text-subtle">
+                        The principles that guide our every decision and action.
+                    </p>
+                </div>
+                <div
+                    class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+                >
+                    <div
+                        v-for="value in coreValues"
+                        :key="value.title"
+                        class="flex transform flex-col items-center rounded-lg border border-transparent bg-button-dark p-8 text-center shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-2 hover:border-button-primary hover:border-4 hover:shadow-2xl"
+                    >
+                        <div
+                            class="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-button-primary text-white"
+                        >
+                            <component :is="value.icon" class="h-8 w-8" />
+                        </div>
+                        <h3
+                            class="text-xl font-semibold leading-6 text-text-light"
+                        >
+                            {{ value.title }}
+                        </h3>
+                        <p
+                            class="mt-4 flex-auto text-base leading-7 text-text-subtle"
+                        >
+                            {{ value.description }}
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
