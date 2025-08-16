@@ -12,7 +12,8 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ["Figtree", ...defaultTheme.fontFamily.sans],
+                sans: ["Montserrat", ...defaultTheme.fontFamily.sans],
+                serif: ["Poppins", ...defaultTheme.fontFamily.serif],
             },
             colors: {
                 brand: {
@@ -27,11 +28,16 @@ module.exports = {
                     light: "#ffffff", // Sebelumnya white
                     muted: "#d1d5db", // Sebelumnya gray-300
                     subtle: "#9ca3af", // Sebelumnya gray-400
+                    dark: "#000000", // Sebelumnya gray-900
                 },
                 button: {
-                    primary: "#100d4b", // Sebelumnya indigo-600
+                    primary: "#ca6f0c", // Sebelumnya indigo-600
                     secondary: "#ffffff",
                     dark: "#000000",
+                },
+                background: {
+                    light: "#f3f4f6", // Sebelumnya gray-100
+                    dark: "#1f2937", // Sebelumnya gray-800
                 },
             },
         },
