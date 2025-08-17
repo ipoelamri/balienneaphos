@@ -1,8 +1,6 @@
 <script setup>
 import { ref } from "vue";
 import { Head, Link } from "@inertiajs/vue3";
-import { Dialog, DialogPanel } from "@headlessui/vue";
-import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
 import {
     ShieldCheckIcon,
     SparklesIcon,
@@ -12,6 +10,7 @@ import {
     WrenchScrewdriverIcon,
 } from "@heroicons/vue/24/outline";
 
+import MainLayout from "@/Layouts/MainLayout.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 
 // 1. Import Swiper Vue.js components
@@ -26,21 +25,44 @@ import "swiper/css/effect-fade";
 // 3. import required modules
 import { Autoplay, Pagination, Navigation, EffectFade } from "swiper/modules";
 
+// Memberitahu Inertia untuk menggunakan MainLayout.vue sebagai pembungkus halaman ini
+defineOptions({ layout: MainLayout });
+
 defineProps({
     canLogin: Boolean,
     canRegister: Boolean,
     portofolios: Array,
 });
 
-const navigation = [
-    { name: "Home", href: "/" },
-    { name: "Services", href: "#services" },
-    { name: "About", href: "#about" },
-    { name: "Portofolio", href: "#projects" },
-    { name: "Contact", href: "#" },
+const galleryImages = [
+    {
+        src: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=2574&auto=format&fit=crop",
+
+        alt: "Gambar 1",
+    },
+    {
+        src: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2671&auto=format&fit=crop",
+        alt: "Gambar 2",
+    },
+    {
+        src: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=2670&auto=format&fit=crop",
+
+        alt: "Gambar 3",
+    },
+    {
+        src: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=2670&auto=format&fit=crop",
+        alt: "Gambar 4",
+    },
+    {
+        src: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=2670&auto=format&fit=crop",
+        alt: "Gambar 5",
+    },
+    {
+        src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2670&auto=format&fit=crop",
+        alt: "Gambar 6",
+    },
 ];
 
-const mobileMenuOpen = ref(false);
 const swiperModules = [Autoplay, Pagination, Navigation, EffectFade];
 
 const villaImages = [
@@ -84,39 +106,39 @@ const services2 = [
 
 const coreValues = [
     {
-        title: "INTEGRITY",
+        title: "Integrity Reflected in Quality",
         description:
-            "We uphold the highest standards of integrity, ensuring transparency and honesty in every project we undertake.",
+            "Quality is our promise. We combine expertise, the finest materials, and a commitment to the values of integrity to ensure that every project becomes a lasting symbol of excellence.",
         icon: ShieldCheckIcon,
     },
     {
-        title: "QUALITY",
+        title: "Building with Core Values",
         description:
-            "We are committed to excellence, using only the finest materials and craftsmanship to deliver durable and beautiful properties.",
+            "PT. Bali Ennea Phos is committed to unwavering accountability, dedication, and integrity. Through this approach, we ensure that every structure not only stands tall but also reflects the trust and values our clients place in us.",
         icon: SparklesIcon,
     },
     {
-        title: "INNOVATION",
+        title: "Dedication to Excellence",
         description:
-            "We embrace creativity and modern solutions to build villas that are not only aesthetically pleasing but also smart and sustainable.",
+            "Excellence is not just our goal but also our standard. Every detail is meticulously attended to, creating results that not only meet but exceed client expectations.",
         icon: LightBulbIcon,
     },
     {
-        title: "CLIENT COMMITMENT",
+        title: "Client Satisfaction is Our Top Priority",
         description:
-            "Our clients are our top priority. We work closely with you to turn your vision into a reality, ensuring satisfaction at every step.",
+            "We believe that true success lies in the smiles and satisfaction of our clients.Through open communication, understanding client needs, and delivering exceptional results, we make your satisfaction our ultimate goal.",
         icon: UserGroupIcon,
     },
     {
-        title: "SUSTAINABILITY",
+        title: "Uncompromising Accountability",
         description:
-            "We build in harmony with Bali's nature, using sustainable materials and practices to create eco-friendly luxury.",
+            "We understand that every project carries significant responsibility. With transparency and trust as our core pillars,PT. Bali Ennea Phos ensures that every step of the construction process is accountable, from planning to completion.",
         icon: GlobeAmericasIcon,
     },
     {
-        title: "CRAFTSMANSHIP",
+        title: "Excellence in Every Detail",
         description:
-            "Our dedication to fine craftsmanship ensures that every detail is executed with precision, creating timeless and durable structures.",
+            "With accountability as our foundation, we deliver construction solutions infused with a dedication to perfection. We don’t just build structures; we create meaningful experiences and long-lasting relationships.",
         icon: WrenchScrewdriverIcon,
     },
 ];
@@ -159,124 +181,7 @@ const getImageUrl = (imagePath) => {
 
 <template>
     <Head title="Home" />
-    <div class="bg-button-dark text-text-light">
-        <!-- Header: diubah menjadi fixed, dengan background transparan dan efek blur -->
-        <header
-            class="fixed inset-x-0 top-0 z-50 bg-brand-dark/80 backdrop-blur-sm"
-        >
-            <nav
-                class="flex items-center justify-between p-6 lg:px-8"
-                aria-label="Global"
-            >
-                <div class="flex lg:flex-1">
-                    <a href="/" class="-m-1.5 p-1.5">
-                        <span class="sr-only">Bali Ennea Phos</span>
-                        <img
-                            class="h-16 w-auto"
-                            src="/images/logo.png"
-                            alt="Company Logo"
-                        />
-                    </a>
-                </div>
-                <div class="flex lg:hidden">
-                    <button
-                        type="button"
-                        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-text-subtle"
-                        @click="mobileMenuOpen = true"
-                    >
-                        <span class="sr-only">Open main menu</span>
-                        <Bars3Icon class="size-6" aria-hidden="true" />
-                    </button>
-                </div>
-                <div
-                    class="hidden lg:flex lg:gap-x-12"
-                    v-if="navigation.length > 0"
-                >
-                    <a
-                        v-for="item in navigation"
-                        :key="item.name"
-                        :href="item.href"
-                        class="text-sm font-semibold leading-6 text-button-primary hover:text-text-light"
-                        >{{ item.name }}</a
-                    >
-                </div>
-                <div
-                    class="hidden lg:flex lg:flex-1 lg:justify-end"
-                    v-if="canLogin"
-                >
-                    <Link
-                        v-if="$page.props.auth.user"
-                        :href="route('dashboard')"
-                        class="text-sm font-semibold leading-6 text-text-light"
-                        >Dashboard</Link
-                    >
-                    <template v-else>
-                        <Link
-                            :href="route('login')"
-                            class="text-sm font-semibold leading-6 text-text-light"
-                            >Log in <span aria-hidden="true">&rarr;</span></Link
-                        >
-                    </template>
-                </div>
-            </nav>
-            <Dialog
-                class="lg:hidden"
-                @close="mobileMenuOpen = false"
-                :open="mobileMenuOpen"
-            >
-                <div class="fixed inset-0 z-50" />
-                <DialogPanel
-                    class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-brand-dark px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10"
-                >
-                    <div class="flex items-center justify-between">
-                        <a href="/" class="-m-1.5 p-1.5">
-                            <span class="sr-only">Bali Ennea Phos</span>
-                            <img
-                                class="h-8 w-auto"
-                                src="/images/logo.png"
-                                alt="Company Logo"
-                            />
-                        </a>
-                        <button
-                            type="button"
-                            class="-m-2.5 rounded-md p-2.5 text-text-subtle"
-                            @click="mobileMenuOpen = false"
-                        >
-                            <span class="sr-only">Close menu</span>
-                            <XMarkIcon class="size-6" aria-hidden="true" />
-                        </button>
-                    </div>
-                    <div class="mt-6 flow-root" v-if="navigation.length > 0">
-                        <div class="-my-6 divide-y divide-text-subtle/25">
-                            <div class="space-y-2 py-6">
-                                <a
-                                    v-for="item in navigation"
-                                    :key="item.name"
-                                    :href="item.href"
-                                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-text-light hover:bg-brand-medium"
-                                    >{{ item.name }}</a
-                                >
-                            </div>
-                            <div class="py-6" v-if="canLogin">
-                                <Link
-                                    v-if="$page.props.auth.user"
-                                    :href="route('dashboard')"
-                                    class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-text-light hover:bg-brand-medium"
-                                    >Dashboard</Link
-                                >
-                                <Link
-                                    v-else
-                                    :href="route('login')"
-                                    class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-text-light hover:bg-brand-medium"
-                                    >Log in</Link
-                                >
-                            </div>
-                        </div>
-                    </div>
-                </DialogPanel>
-            </Dialog>
-        </header>
-
+    <div>
         <div class="relative isolate h-screen overflow-hidden">
             <Swiper
                 :spaceBetween="0"
@@ -313,15 +218,16 @@ const getImageUrl = (imagePath) => {
                         Bali Ennea Phos
                     </h1>
                     <p class="mt-6 text-lg leading-8 text-text-muted max-w-2xl">
-                        Mewujudkan villa impian Anda di Bali dengan desain yang
-                        elegan dan kualitas konstruksi terbaik.
+                        PT. Bali Ennea Phos is a trusted construction and
+                        project management company with a reputation as one of
+                        the best in Bali.
                     </p>
                     <div class="mt-10 flex items-center justify-center gap-x-6">
                         <a
                             href="#projects"
                             class="rounded-md bg-button-primary px-3.5 py-2.5 text-sm font-semibold text-text-light shadow-sm hover:bg-button-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
                         >
-                            Lihat Proyek Kami
+                            Explore our portfolio
                         </a>
                     </div>
                 </div>
@@ -437,7 +343,7 @@ const getImageUrl = (imagePath) => {
                     Vision and Mission
                 </h2>
             </div>
-            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-7xl px-6 py-6 lg:px-8">
                 <!-- Vision -->
                 <div
                     class="grid grid-cols-1 items-center gap-x-16 gap-y-16 lg:grid-cols-2 mt-8"
@@ -461,7 +367,7 @@ const getImageUrl = (imagePath) => {
                     <img
                         src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2671&auto=format&fit=crop"
                         alt="Modern villa view with pool"
-                        class="w-full rounded-xl object-cover shadow-xl"
+                        class="w-full rounded-xl object-cover shadow-xl border-4 border-button-primary"
                     />
                 </div>
 
@@ -487,7 +393,7 @@ const getImageUrl = (imagePath) => {
                     <img
                         src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2671&auto=format&fit=crop"
                         alt="Luxurious villa interior"
-                        class="w-full rounded-xl object-cover shadow-xl"
+                        class="w-full rounded-xl object-cover shadow-xl border-4 border-button-primary"
                     />
                 </div>
             </div>
@@ -563,6 +469,132 @@ const getImageUrl = (imagePath) => {
                         >
                             {{ value.description }}
                         </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="why-us bg-button-dark py-24 sm:py-24">
+            <div class="mx-auto max-w-xl px-6 lg:px-8 text-center">
+                <h2
+                    class="font-serif text-xl font-bold tracking-tight text-center text-button-light sm:text-8xl"
+                >
+                    Why Us?
+                </h2>
+            </div>
+            <div class="overflow-hidden bg-button-dark py-24 sm:py-32">
+                <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                    <div
+                        class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2"
+                    >
+                        <div class="lg:pt-4 lg:pr-8">
+                            <div class="lg:max-w-lg">
+                                <p
+                                    class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-button-primary sm:text-8xl"
+                                >
+                                    Why Us?
+                                </p>
+                                <p class="mt-6 text-xl font-bold text-gray-300">
+                                    Because we don’t just build structures – we
+                                    build trust, excellence, and pride.
+                                </p>
+                                <p
+                                    class="mt-6 text-lg/8 text-button-primary text-center"
+                                >
+                                    Unwavering Accountability Dedication to
+                                    Perfection Integrity in Quality Your
+                                    Satisfaction, Our Mission A Portfolio That
+                                    Speaks for Itself
+                                </p>
+                                <p class="mt-6 text-lg/8 text-gray-300">
+                                    Choosing PT. Bali Ennea Phos means choosing
+                                    a partner who cares, is professional, and is
+                                    dedicated to turning your vision into a
+                                    masterpiece. With us, your project will
+                                    become a symbol of perfection and
+                                    timelessness.
+                                </p>
+                                <img
+                                    src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2671&auto=format&fit=crop"
+                                    alt="Luxurious villa interior"
+                                    class="w-full rounded-xl object-cover shadow-xl border-4 border-button-primary mt-6"
+                                />
+                                <p
+                                    class="mt-6 text-4xl font-extrabold text-gray-300"
+                                >
+                                    With PT. Bali Ennea Phos, you don’t just get
+                                    a project – you gain an unforgettable
+                                    experience. Trust us, and feel the
+                                    difference.
+                                </p>
+
+                                <div class="mx-auto mt-16 px-4 md:px-6 lg:px-8">
+                                    <div
+                                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+                                    >
+                                        <div
+                                            class="h-96 md:h-auto md:row-span-2"
+                                        >
+                                            <img
+                                                :src="galleryImages[0].src"
+                                                :alt="galleryImages[0].alt"
+                                                class="w-full h-72 object-cover rounded-xl shadow-lg border-4 border-button-primary"
+                                            />
+                                        </div>
+
+                                        <div class="h-96">
+                                            <img
+                                                :src="galleryImages[1].src"
+                                                :alt="galleryImages[1].alt"
+                                                class="w-full h-full object-cover rounded-xl shadow-lg border-4 border-button-primary"
+                                            />
+                                        </div>
+
+                                        <div
+                                            class="h-96 md:h-auto lg:row-span-2"
+                                        >
+                                            <img
+                                                :src="galleryImages[2].src"
+                                                :alt="galleryImages[2].alt"
+                                                class="w-full h-full object-cover rounded-xl shadow-lg border-4 border-button-primary"
+                                            />
+                                        </div>
+
+                                        <div class="h-72">
+                                            <img
+                                                :src="galleryImages[3].src"
+                                                :alt="galleryImages[3].alt"
+                                                class="w-full h-full object-cover rounded-xl shadow-lg border-4 border-button-primary"
+                                            />
+                                        </div>
+
+                                        <div
+                                            class="h-96 md:h-auto md:row-span-2 lg:row-span-3"
+                                        >
+                                            <img
+                                                :src="galleryImages[4].src"
+                                                :alt="galleryImages[4].alt"
+                                                class="w-full h-full object-cover rounded-xl shadow-lg border-4 border-button-primary"
+                                            />
+                                        </div>
+
+                                        <div class="h-96">
+                                            <img
+                                                :src="galleryImages[5].src"
+                                                :alt="galleryImages[5].alt"
+                                                class="w-full h-full object-cover rounded-xl shadow-lg border-4 border-button-primary"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <img
+                            src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=2574&auto=format&fit=crop"
+                            alt="Product screenshot"
+                            class="w-xl max-w-none rounded-xl shadow-xl ring-1 ring-white/10 sm:w-228 md:-ml-4 lg:-ml-0 border-4 border-button-primary"
+                            width="2432"
+                            height="1442"
+                        />
                     </div>
                 </div>
             </div>
