@@ -15,10 +15,10 @@ defineProps({
 // Data untuk statistik yang akan dianimasikan
 // Menambahkan properti `isFloat` untuk menangani angka desimal
 const stats = [
-    { name: "Years of Experience", value: 8, suffix: "", isFloat: false },
-    { name: "Projects", value: 250, suffix: "+", isFloat: false },
-    { name: "Satisfied Clients", value: 400, suffix: "+", isFloat: false },
-    { name: "Followers", value: 1.75, suffix: " mil", isFloat: true },
+    { name: "Years of Experience", value: 5, suffix: "", isFloat: false },
+    { name: "Projects", value: 22, suffix: "+", isFloat: false },
+    { name: "Satisfied Clients", value: 99, suffix: "+", isFloat: false },
+    //{ name: "Followers", value: 1.75, suffix: " mil", isFloat: true },
 ];
 
 // Refs untuk menampung nilai yang akan ditampilkan di UI, dimulai dari 0
@@ -62,7 +62,7 @@ onMounted(() => {
         <div
             class="pt-32 h-screen w-full"
             style="
-                background-image: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=2670&auto=format&fit=crop');
+                background-image: url('images/v-5.png');
                 background-size: cover;
                 background-position: center;
             "
@@ -113,7 +113,7 @@ onMounted(() => {
                         </div>
                     </div>
                     <img
-                        src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2671&auto=format&fit=crop"
+                        src="images/01.jpg"
                         alt="Luxurious villa interior"
                         class="w-full rounded-xl object-cover shadow-xl border-4 border-button-primary"
                     />
@@ -121,7 +121,7 @@ onMounted(() => {
             </div>
         </section>
 
-        <section class="bg-button-dark py-24 sm:py-32">
+        <section id="achievements" class="bg-button-dark py-24 sm:py-32">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl lg:max-w-none">
                     <div class="text-center">
@@ -135,7 +135,7 @@ onMounted(() => {
                         </p>
                     </div>
                     <dl
-                        class="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4"
+                        class="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-3 lg:grid-cols-3"
                     >
                         <div
                             v-for="stat in animatedStats"

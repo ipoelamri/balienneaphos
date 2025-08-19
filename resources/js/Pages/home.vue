@@ -36,48 +36,38 @@ defineProps({
 
 const galleryImages = [
     {
-        src: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=2574&auto=format&fit=crop",
+        src: "/images/01.jpg",
 
         alt: "Gambar 1",
     },
     {
-        src: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2671&auto=format&fit=crop",
+        src: "images/v2.png",
         alt: "Gambar 2",
     },
     {
-        src: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=2670&auto=format&fit=crop",
+        src: "images/v10.png",
 
         alt: "Gambar 3",
     },
     {
-        src: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=2670&auto=format&fit=crop",
+        src: "images/v11.png",
         alt: "Gambar 4",
     },
     {
-        src: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=2670&auto=format&fit=crop",
+        src: "images/03.jpg",
         alt: "Gambar 5",
     },
     {
-        src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2670&auto=format&fit=crop",
+        src: "images/v12.png",
         alt: "Gambar 6",
     },
 ];
 
 const swiperModules = [Autoplay, Pagination, Navigation, EffectFade];
 
-const villaImages = [
-    "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=2574&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=2670&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2670&auto=format&fit=crop",
-];
-const serviceImages = [
-    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2670&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=2670&auto=format&fit=crop",
-];
-const serviceImages2 = [
-    "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=2670&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2671&auto=format&fit=crop",
-];
+const villaImages = ["images/v2.png", "images/v10.png", "images/v11.png"];
+const serviceImages = ["images/01.jpg", "images/vw-4_ps.png"];
+const serviceImages2 = ["images/05a.jpg", "images/v12.png"];
 
 const services = [
     {
@@ -97,6 +87,7 @@ const services2 = [
         description:
             "Creating beautiful and functional landscape designs that blend natural elements with modern aesthetics to enrich the surroundings of your property.",
     },
+
     {
         title: "REAL ESTATE",
         description:
@@ -144,17 +135,27 @@ const coreValues = [
 ];
 
 const marqueeImages = [
-    "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=2574&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=2670&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2670&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=500&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?q=80&w=500&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=500&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=500&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=500&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=2670&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2671&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1598228723793-52759bba239c?q=80&w=500&auto=format&fit=crop",
+    "images/v2.png",
+    "images/v10.png",
+    "images/vw-1_ps.png",
+    "images/v11.png",
+    "images/01.jpg",
+    "images/vw-4_ps.png",
+
+    "images/05a.jpg",
+    "images/v12.png",
+    "images/03.jpg",
+    "images/09.jpg",
+    "images/v-7.png",
+    "images/vw-3_ps.png",
+    "images/v-5.png",
+    "images/06.jpg",
+    "images/11.jpg",
+    "images/v12.png",
+    "images/v13.png",
+    "images/v21.png",
+    "images/vw-2_ps.png",
+    "images/v14.png",
 ];
 
 // Untuk membuat tinggi gambar terlihat acak namun konsisten
@@ -170,6 +171,15 @@ const randomHeights = [
     "h-56",
     "h-56",
     "h-48",
+    "h-56",
+    "h-48",
+    "h-56",
+    "h-48",
+    "h-44",
+    "h-56",
+    "h-56",
+    "h-48",
+    "h-56",
 ];
 
 const getImageUrl = (imagePath) => {
@@ -365,7 +375,7 @@ const getImageUrl = (imagePath) => {
                         </p>
                     </div>
                     <img
-                        src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2671&auto=format&fit=crop"
+                        src="images/06.jpg"
                         alt="Modern villa view with pool"
                         class="w-full rounded-xl object-cover shadow-xl border-4 border-button-primary"
                     />
@@ -391,7 +401,7 @@ const getImageUrl = (imagePath) => {
                         </p>
                     </div>
                     <img
-                        src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2671&auto=format&fit=crop"
+                        src="images/09.jpg"
                         alt="Luxurious villa interior"
                         class="w-full rounded-xl object-cover shadow-xl border-4 border-button-primary"
                     />
@@ -514,7 +524,7 @@ const getImageUrl = (imagePath) => {
                                     timelessness.
                                 </p>
                                 <img
-                                    src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2671&auto=format&fit=crop"
+                                    src="images/03.jpg"
                                     alt="Luxurious villa interior"
                                     class="w-full rounded-xl object-cover shadow-xl border-4 border-button-primary mt-6"
                                 />
@@ -589,7 +599,7 @@ const getImageUrl = (imagePath) => {
                             </div>
                         </div>
                         <img
-                            src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=2574&auto=format&fit=crop"
+                            src="images/09.jpg"
                             alt="Product screenshot"
                             class="w-xl max-w-none rounded-xl shadow-xl ring-1 ring-white/10 sm:w-228 md:-ml-4 lg:-ml-0 border-4 border-button-primary"
                             width="2432"
