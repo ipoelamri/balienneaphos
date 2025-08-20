@@ -21,7 +21,7 @@ defineProps({
         <div
             class="pt-32 h-screen w-full"
             style="
-                background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2670&auto=format&fit=crop');
+                background-image: url('images/v03.jpg');
                 background-size: cover;
                 background-position: center;
             "

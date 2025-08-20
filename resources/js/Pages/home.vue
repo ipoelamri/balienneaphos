@@ -141,7 +141,6 @@ const marqueeImages = [
     "images/v11.png",
     "images/01.jpg",
     "images/vw-4_ps.png",
-
     "images/05a.jpg",
     "images/v12.png",
     "images/03.jpg",

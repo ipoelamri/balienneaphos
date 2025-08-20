@@ -36,12 +36,12 @@ const contactDetails = [
         href: "https://maps.app.goo.gl/6H1eM8pED8WFNjgD9?g_st=ipc",
         icon: MapPinIcon,
     },
-    {
-        name: "Second Email",
-        value: "balienneaphos@gmail.com",
-        href: "mailto:balienneaphos@gmail.com",
-        icon: EnvelopeIcon, // Menggunakan ikon generik, bisa diganti jika ada ikon spesifik
-    },
+    // {
+    //     name: "Second Email",
+    //     value: "balienneaphos@gmail.com",
+    //     href: "mailto:balienneaphos@gmail.com",
+    //     icon: EnvelopeIcon, // Menggunakan ikon generik, bisa diganti jika ada ikon spesifik
+    // },
 ];
 </script>
 
@@ -82,7 +82,7 @@ const contactDetails = [
                         </p>
                     </div>
                     <div
-                        class="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4"
+                        class="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-3 lg:grid-cols-3"
                     >
                         <!-- Setiap item kontak sekarang adalah tautan yang bisa diklik -->
                         <a
