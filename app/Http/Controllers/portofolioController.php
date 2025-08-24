@@ -4,10 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Models\portofolio;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Inertia\Inertia;
 
 class PortofolioController extends Controller
 {
+    /**
+     * Display a listing of the resource for the public page.
+     */
+    public function publicIndex()
+    {
+        $portofolios = portofolio::latest()->get();
+        return Inertia::render('Portofolios', [
+            'portofolios' => $portofolios,
+        ]);
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -41,12 +54,15 @@ class PortofolioController extends Controller
 
         $data = $request->only(['title', 'description', 'link']);
         if ($request->hasFile('image')) {
-            $data['image'] = $request->file('image')->store('portofolios', 'public');
+            $file = $request->file('image');
+            // Generate a unique name while preserving the extension
+            $filename = Str::random(40) . '.' . $file->getClientOriginalExtension();
+            $data['image'] = $file->storeAs('portofolios', $filename, 'public');
         }
 
         portofolio::create($data);
 
-        return redirect()->route('portofolios.index')->with('success', 'Portofolio created successfully.');
+        return redirect()->route('admin.portofolios.index')->with('success', 'Portofolio created successfully.');
     }
 
     /**
@@ -87,12 +103,19 @@ class PortofolioController extends Controller
         $data = $request->only(['title', 'description', 'link']);
         
         if ($request->hasFile('image')) {
-            $data['image'] = $request->file('image')->store('portofolios', 'public');
+            // Delete old image if it exists
+            if ($portofolio->image) {
+                Storage::disk('public')->delete($portofolio->image);
+            }
+            $file = $request->file('image');
+            // Generate a unique name while preserving the extension
+            $filename = Str::random(40) . '.' . $file->getClientOriginalExtension();
+            $data['image'] = $file->storeAs('portofolios', $filename, 'public');
         }
 
         $portofolio->update($data);
 
-        return redirect()->route('portofolios.index')->with('success', 'Portofolio updated successfully.');
+        return redirect()->route('admin.portofolios.index')->with('success', 'Portofolio updated successfully.');
     }
 
     /**
@@ -101,8 +124,12 @@ class PortofolioController extends Controller
     public function destroy(string $id)
     {
         $portofolio = portofolio::findOrFail($id);
+        // Delete old image if it exists
+        if ($portofolio->image) {
+            Storage::disk('public')->delete($portofolio->image);
+        }
         $portofolio->delete();
 
-        return redirect()->route('portofolios.index')->with('success', 'Portofolio deleted successfully.');
+        return redirect()->route('admin.portofolios.index')->with('success', 'Portofolio deleted successfully.');
     }
 }

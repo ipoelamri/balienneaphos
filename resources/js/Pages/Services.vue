@@ -21,21 +21,21 @@ const services = [
             "Property management services remain well maintained, ensuring maximum ROI.",
     },
     {
-        title: "STRUCTURAL CONSTRUCTION, ARCHITECTURE, AND MEP",
+        title: "LAND SERVICE",
         description:
-            " Integrating expertise to ensure projects that are sturdy, aesthetically pleasing, and functionally optimized.",
+            "Providing comprehensive property solutions, from buying and selling to land development, with a focus on strategic locations and optimal investment potential.",
     },
 ];
 const services2 = [
     {
-        title: "LANDSCAPE",
+        title: "DESIGN",
         description:
             "Creating beautiful and functional landscape designs that blend natural elements with modern aesthetics to enrich the surroundings of your property.",
     },
     {
-        title: "REAL ESTATE",
+        title: "CONSTRUCTION STRUCTURAL,  ARCHITECTURE, AND MEP",
         description:
-            "MProviding comprehensive property solutions, from buying and selling to land development, with a focus on strategic locations and optimal investment potential.",
+            " Integrating expertise to ensure projects that are sturdy, aesthetically pleasing, and functionally optimized.",
     },
 ];
 

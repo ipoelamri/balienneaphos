@@ -13,7 +13,7 @@ const navigation = [
     { name: "Home", href: route("home") },
     { name: "Services", href: "services" },
     { name: "About", href: route("about") },
-    { name: "Portofolio", href: "#projects" },
+    { name: "Portofolio", href: route("portofolios.public") },
     { name: "Contact", href: route("contact") },
 ];
 
@@ -34,13 +34,13 @@ const menus = ref([
             { text: "About Us", link: "/about" },
 
             { text: "Contact & Support", link: "/contact" },
-            { text: "Our Achievements", link: "#achievements" },
+            // { text: "Our Achievements", link: "#achievements" },
         ],
     },
     {
         title: "Quick Links",
         items: [
-            { text: "Send Mail", link: "mailto:info@balienneaphos.com" },
+            { text: "Send Mail", link: "mailto:Hello@balienneaphos.com" },
             {
                 text: "Our Office",
                 link: "https://maps.app.goo.gl/6H1eM8pED8WFNjgD9?g_st=ipc",
@@ -204,7 +204,7 @@ const menus = ref([
                                 <img
                                     src="/images/logo.png"
                                     alt="logo"
-                                    class="max-w-full h-24 hidden dark:block"
+                                    class="max-w-full h-24 w-auto hidden dark:block"
                                 />
                             </a>
                             <p
@@ -288,7 +288,7 @@ const menus = ref([
                             </h4>
                             <div class="flex items-center mb-6">
                                 <a
-                                    href="javascript:void(0)"
+                                    href="https://www.facebook.com/share/19aNmxGY6p/?mibextid=wwXIfr"
                                     class="flex items-center justify-center w-8 h-8 mr-3 border rounded-full text-dark hover:border-primary hover:bg-primary border-stroke dark:border-dark-3 dark:hover:border-primary dark:text-white hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
                                 >
                                     <svg
@@ -303,22 +303,41 @@ const menus = ref([
                                     </svg>
                                 </a>
                                 <a
-                                    href="javascript:void(0)"
+                                    href="https://www.instagram.com/bali_enneaphos?igsh=dWh3eXFlcDRhNzlh"
                                     class="flex items-center justify-center w-8 h-8 mr-3 border rounded-full text-dark hover:border-primary hover:bg-primary border-stroke dark:border-dark-3 dark:hover:border-primary dark:text-white hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
                                 >
                                     <svg
+                                        xmlns="http://www.w3.org/2000/svg"
                                         width="16"
-                                        height="12"
-                                        viewBox="0 0 16 12"
-                                        class="fill-current"
+                                        height="16"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="#f5f5f5"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
                                     >
+                                        <rect
+                                            width="20"
+                                            height="20"
+                                            x="2"
+                                            y="2"
+                                            rx="5"
+                                            ry="5"
+                                        ></rect>
                                         <path
-                                            d="M14.2194 2.06654L15.2 0.939335C15.4839 0.634051 15.5613 0.399217 15.5871 0.2818C14.8129 0.704501 14.0903 0.845401 13.6258 0.845401H13.4452L13.3419 0.751468C12.7226 0.258317 11.9484 0 11.1226 0C9.31613 0 7.89677 1.36204 7.89677 2.93542C7.89677 3.02935 7.89677 3.17025 7.92258 3.26419L8 3.73386L7.45806 3.71037C4.15484 3.61644 1.44516 1.03327 1.00645 0.587084C0.283871 1.76125 0.696774 2.88845 1.13548 3.59296L2.0129 4.90802L0.619355 4.20352C0.645161 5.18982 1.05806 5.96477 1.85806 6.52838L2.55484 6.99804L1.85806 7.25636C2.29677 8.45401 3.27742 8.94716 4 9.13503L4.95484 9.36986L4.05161 9.93346C2.60645 10.8728 0.8 10.8024 0 10.7319C1.62581 11.7652 3.56129 12 4.90323 12C5.90968 12 6.65806 11.9061 6.83871 11.8356C14.0645 10.2857 14.4 4.41487 14.4 3.2407V3.07632L14.5548 2.98239C15.4323 2.23092 15.7935 1.8317 16 1.59687C15.9226 1.62035 15.8194 1.66732 15.7161 1.6908L14.2194 2.06654Z"
-                                        />
+                                            d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                                        ></path>
+                                        <line
+                                            x1="17.5"
+                                            x2="17.51"
+                                            y1="6.5"
+                                            y2="6.5"
+                                        ></line>
                                     </svg>
                                 </a>
                                 <a
-                                    href="javascript:void(0)"
+                                    href="https://youtube.com/@balienneaphos?feature=shared"
                                     class="flex items-center justify-center w-8 h-8 mr-3 border rounded-full text-dark hover:border-primary hover:bg-primary border-stroke dark:border-dark-3 dark:hover:border-primary dark:text-white hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
                                 >
                                     <svg
@@ -333,19 +352,21 @@ const menus = ref([
                                     </svg>
                                 </a>
                                 <a
-                                    href="javascript:void(0)"
+                                    href="https://www.tiktok.com/@balienneaphos?_t=ZS-8z2qGNxIpOu&_r=1"
                                     class="flex items-center justify-center w-8 h-8 mr-3 border rounded-full text-dark hover:border-primary hover:bg-primary border-stroke dark:border-dark-3 dark:hover:border-primary dark:text-white hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
                                 >
-                                    <svg
-                                        width="14"
-                                        height="14"
-                                        viewBox="0 0 14 14"
-                                        class="fill-current"
-                                    >
-                                        <path
-                                            d="M13.0214 0H1.02084C0.453707 0 0 0.451613 0 1.01613V12.9839C0 13.5258 0.453707 14 1.02084 14H12.976C13.5432 14 13.9969 13.5484 13.9969 12.9839V0.993548C14.0422 0.451613 13.5885 0 13.0214 0ZM4.15142 11.9H2.08705V5.23871H4.15142V11.9ZM3.10789 4.3129C2.42733 4.3129 1.90557 3.77097 1.90557 3.11613C1.90557 2.46129 2.45002 1.91935 3.10789 1.91935C3.76577 1.91935 4.31022 2.46129 4.31022 3.11613C4.31022 3.77097 3.81114 4.3129 3.10789 4.3129ZM11.9779 11.9H9.9135V8.67097C9.9135 7.90323 9.89082 6.8871 8.82461 6.8871C7.73571 6.8871 7.57691 7.74516 7.57691 8.60323V11.9H5.51254V5.23871H7.53154V6.16452H7.55423C7.84914 5.62258 8.50701 5.08065 9.52785 5.08065C11.6376 5.08065 12.0232 6.43548 12.0232 8.2871V11.9H11.9779Z"
-                                        />
-                                    </svg>
+                                    <div class="w-4 h-4">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="currentColor"
+                                            viewBox="0 0 448 512"
+                                        >
+                                            <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
+                                            <path
+                                                d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z"
+                                            />
+                                        </svg>
+                                    </div>
                                 </a>
                             </div>
                             <p

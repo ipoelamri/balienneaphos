@@ -107,7 +107,7 @@ onMounted(() => {
                             under the name PT. Bali Ennea Phos.
                         </p>
                         <div class="items-center justify-center">
-                            <PrimaryButton href="/contact">
+                            <PrimaryButton href="https://wa.link/h79z9o">
                                 Let's Talk
                             </PrimaryButton>
                         </div>
@@ -121,7 +121,7 @@ onMounted(() => {
             </div>
         </section>
 
-        <section id="achievements" class="bg-button-dark py-24 sm:py-32">
+        <!-- <section id="achievements" class="bg-button-dark py-24 sm:py-32">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl lg:max-w-none">
                     <div class="text-center">
@@ -156,6 +156,6 @@ onMounted(() => {
                     </dl>
                 </div>
             </div>
-        </section>
+        </section> -->
     </div>
 </template>

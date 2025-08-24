@@ -24,15 +24,22 @@ const contactDetails = [
         href: "mailto:info@balienneaphos.com",
         icon: EnvelopeIcon,
     },
+
     {
-        name: "Call Us",
+        name: "Contact Us",
+        value: "+62 82-3414-42786 ",
+        href: "https://wa.link/h79z9o",
+        icon: PhoneIcon,
+    },
+    {
+        name: "Second Contact",
         value: "+62 819-7799-7548",
         href: "https://wa.me/+6281977997548",
         icon: PhoneIcon,
     },
     {
         name: "Our Office",
-        value: "Jl. Raya Latu, Gg. Giri Sari, No. 33 , Abiansemal, Badung, Bali",
+        value: "Jl. Raya Gerih, No. 99, Sibang Kaja, Abiansemal, Badung, Bali",
         href: "https://maps.app.goo.gl/6H1eM8pED8WFNjgD9?g_st=ipc",
         icon: MapPinIcon,
     },
@@ -82,7 +89,7 @@ const contactDetails = [
                         </p>
                     </div>
                     <div
-                        class="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-3 lg:grid-cols-3"
+                        class="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-4 lg:grid-cols-4"
                     >
                         <!-- Setiap item kontak sekarang adalah tautan yang bisa diklik -->
                         <a

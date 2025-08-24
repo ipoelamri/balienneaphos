@@ -76,22 +76,21 @@ const services = [
             "Property management services remain well maintained, ensuring maximum ROI.",
     },
     {
-        title: "STRUCTURAL CONSTRUCTION, ARCHITECTURE, AND MEP",
+        title: "LAND SERVICE",
         description:
-            " Integrating expertise to ensure projects that are sturdy, aesthetically pleasing, and functionally optimized.",
+            "Providing comprehensive property solutions, from buying and selling to land development, with a focus on strategic locations and optimal investment potential.",
     },
 ];
 const services2 = [
     {
-        title: "LANDSCAPE",
+        title: "DESIGN",
         description:
             "Creating beautiful and functional landscape designs that blend natural elements with modern aesthetics to enrich the surroundings of your property.",
     },
-
     {
-        title: "REAL ESTATE",
+        title: "CONSTRUCTION STRUCTURAL,  ARCHITECTURE, AND MEP",
         description:
-            "MProviding comprehensive property solutions, from buying and selling to land development, with a focus on strategic locations and optimal investment potential.",
+            " Integrating expertise to ensure projects that are sturdy, aesthetically pleasing, and functionally optimized.",
     },
 ];
 
@@ -233,7 +232,7 @@ const getImageUrl = (imagePath) => {
                     </p>
                     <div class="mt-10 flex items-center justify-center gap-x-6">
                         <a
-                            href="#projects"
+                            href="/portofolios"
                             class="rounded-md bg-button-primary px-3.5 py-2.5 text-sm font-semibold text-text-light shadow-sm hover:bg-button-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
                         >
                             Explore our portfolio
