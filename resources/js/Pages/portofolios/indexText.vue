@@ -29,11 +29,11 @@ function edit(id) {
             <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900">
-                        <Link
+                        <!-- <Link
                             :href="route('admin.portofolios.create')"
                             class="mb-4 inline-block rounded bg-blue-500 px-4 py-2 text-white"
                             >+ Add Portfolio</Link
-                        >
+                        > -->
                         <div class="mt-6 overflow-x-auto">
                             <table
                                 class="w-full border border-gray-300 border-collapse rounded-lg overflow-hidden"
