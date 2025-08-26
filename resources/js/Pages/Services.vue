@@ -11,7 +11,7 @@ defineProps({
     canLogin: Boolean,
     canRegister: Boolean,
 });
-const serviceImages = ["images/01.jpg", "images/vw-4_ps.png"];
+const serviceImages = ["images/01.jpg", "images/v11.png"];
 const serviceImages2 = ["images/05a.jpg", "images/v12.png"];
 
 const services = [
@@ -50,7 +50,7 @@ const services2 = [
         <div
             class="pt-32 h-screen w-full"
             style="
-                background-image: url('images/vw-1_ps.png');
+                background-image: url('images/v11.png');
                 background-size: cover;
                 background-position: center;
             "

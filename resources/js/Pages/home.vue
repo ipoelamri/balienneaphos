@@ -65,8 +65,8 @@ const galleryImages = [
 
 const swiperModules = [Autoplay, Pagination, Navigation, EffectFade];
 
-const villaImages = ["images/vw-2_ps.png", "images/v10.png", "images/v11.png"];
-const serviceImages = ["images/01.jpg", "images/vw-4_ps.png"];
+const villaImages = ["images/v11.png", "images/v10.png", "images/v11.png"];
+const serviceImages = ["images/01.jpg", "images/v10.png"];
 const serviceImages2 = ["images/05a.jpg", "images/v12.png"];
 
 const services = [
@@ -136,23 +136,23 @@ const coreValues = [
 const marqueeImages = [
     "images/v2.png",
     "images/v10.png",
-    "images/vw-1_ps.png",
+    "images/v13.png",
     "images/v11.png",
     "images/01.jpg",
-    "images/vw-4_ps.png",
+    "images/v10.png",
     "images/05a.jpg",
     "images/v12.png",
     "images/03.jpg",
     "images/09.jpg",
     "images/v-7.png",
-    "images/vw-3_ps.png",
+    "images/v21.png",
     "images/v-5.png",
     "images/06.jpg",
     "images/11.jpg",
     "images/v12.png",
     "images/v13.png",
     "images/v21.png",
-    "images/vw-2_ps.png",
+    "images/v12.png",
     "images/v14.png",
 ];
 
