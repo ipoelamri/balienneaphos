@@ -19,7 +19,7 @@ const form = useForm({
 });
 
 const submit = () => {
-    form.post(route("dashboard.portofolios.update", props.portofolio.id));
+    form.post(route("admin.portofolios.update", props.portofolio.id));
 };
 </script>
 

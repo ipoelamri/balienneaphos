@@ -14,7 +14,7 @@ const form = useForm({
 });
 
 const submit = () => {
-    form.post(route("portofolios.store"));
+    form.post(route("admin.portofolios.store"));
 };
 </script>
 
