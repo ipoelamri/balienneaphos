@@ -65,7 +65,7 @@ const galleryImages = [
 
 const swiperModules = [Autoplay, Pagination, Navigation, EffectFade];
 
-const villaImages = ["images/v2.png", "images/v10.png", "images/v11.png"];
+const villaImages = ["images/vw-2_ps.png", "images/v10.png", "images/v11.png"];
 const serviceImages = ["images/01.jpg", "images/vw-4_ps.png"];
 const serviceImages2 = ["images/05a.jpg", "images/v12.png"];
 

@@ -85,7 +85,7 @@ const submit = () => {
                                 />
                             </div>
 
-                            <div class="mt-4">
+                            <!-- <div class="mt-4">
                                 <InputLabel for="image" value="Image" />
                                 <div v-if="portofolio.image" class="mt-2">
                                     <p>Current Image:</p>
@@ -107,7 +107,7 @@ const submit = () => {
                                     class="mt-2"
                                     :message="form.errors.image"
                                 />
-                            </div>
+                            </div> -->
 
                             <div class="mt-4 flex items-center justify-end">
                                 <PrimaryButton

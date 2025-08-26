@@ -5,12 +5,14 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PortofolioController;
+use App\Http\Controllers\PortofolioControllerText;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServicesController;
 use App\Models\portofolio;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+
 
 
 
@@ -35,6 +37,9 @@ Route::middleware('auth')->group(function () {
    
     Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('portofolios', PortofolioController::class)->names('portofolios');
+    });
+     Route::prefix('dashboard')->name('dashboard.')->group(function () {
+        Route::resource('portofolios', PortofolioControllerText::class)->names('portofolios');
     });
     
 });

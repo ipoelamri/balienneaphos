@@ -20,7 +20,7 @@ const props = defineProps({
         <div
             class="pt-32 h-screen w-full"
             style="
-                background-image: url('images/v03.jpg');
+                background-image: url('images/v21.png');
                 background-size: cover;
                 background-position: center;
             "

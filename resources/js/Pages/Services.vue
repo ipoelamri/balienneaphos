@@ -50,7 +50,7 @@ const services2 = [
         <div
             class="pt-32 h-screen w-full"
             style="
-                background-image: url('images/v12.png');
+                background-image: url('images/vw-1_ps.png');
                 background-size: cover;
                 background-position: center;
             "

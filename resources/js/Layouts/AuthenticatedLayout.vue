@@ -38,6 +38,15 @@ const showingNavigationDropdown = ref(false);
                                 >
                                     Dashboard
                                 </NavLink>
+                                <NavLink
+                                    :href="route('dashboard.portofolios.index')"
+                                    :active="
+                                        route().current('dashboard.portofolios')
+                                    "
+                                    class="text-white"
+                                >
+                                    Edit Portofolio
+                                </NavLink>
                             </div>
                         </div>
 
