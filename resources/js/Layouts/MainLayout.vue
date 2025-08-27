@@ -200,13 +200,13 @@ const menus = ref([
                                     <img
                                         src="/images/logo.png"
                                         alt="logo"
-                                        class="max-w-full dark:hidden"
+                                        class="max-w-full h-24 w-auto"
                                     />
-                                    <img
+                                    <!-- <img
                                         src="/images/logo.png"
                                         alt="logo"
-                                        class="max-w-full h-24 w-auto hidden dark:block"
-                                    />
+                                        class="max-w-full h-24 w-auto"
+                                    /> -->
                                 </a>
                                 <p
                                     class="text-base text-body-color dark:text-dark-6 mb-7"
@@ -219,7 +219,7 @@ const menus = ref([
                                 <p
                                     class="flex items-center text-sm font-medium text-dark dark:text-white"
                                 >
-                                    <span class="mr-3 text-primary">
+                                    <!-- <span class="mr-3 text-primary">
                                         <svg
                                             width="20"
                                             height="20"
@@ -254,7 +254,7 @@ const menus = ref([
                                             </defs>
                                         </svg>
                                     </span>
-                                    <span>+62 819-7799-7548</span>
+                                    <span>+62 819-7799-7548</span> -->
                                 </p>
                             </div>
                         </div>
