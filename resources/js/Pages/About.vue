@@ -54,6 +54,10 @@ onMounted(() => {
         animateValue(stat, stat.value, 2000, stat.isFloat); // Durasi animasi 2 detik
     });
 });
+
+function letstalk() {
+    window.open("https://wa.link/h79z9o");
+}
 </script>
 
 <template>
@@ -107,7 +111,7 @@ onMounted(() => {
                             under the name PT. Bali Ennea Phos.
                         </p>
                         <div class="items-center justify-center">
-                            <PrimaryButton href="https://wa.link/h79z9o">
+                            <PrimaryButton @click="letstalk">
                                 Let's Talk
                             </PrimaryButton>
                         </div>

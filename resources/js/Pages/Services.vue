@@ -33,7 +33,7 @@ const services2 = [
             "Creating beautiful and functional landscape designs that blend natural elements with modern aesthetics to enrich the surroundings of your property.",
     },
     {
-        title: "CONSTRUCTION STRUCTURAL,  ARCHITECTURE, AND MEP",
+        title: "CONSTRUCTION STRUCTURE,  ARCHITECTURE, AND MEP",
         description:
             " Integrating expertise to ensure projects that are sturdy, aesthetically pleasing, and functionally optimized.",
     },
